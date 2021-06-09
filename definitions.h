@@ -1,0 +1,2 @@
+struct node;
+struct List;

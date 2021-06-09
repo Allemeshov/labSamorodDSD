@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sveta/Documents/Freelance/LabsOrders/SamorodLabDSD/lab34/lab34.cpp
+lab34.h
+/Users/sveta/Documents/Freelance/LabsOrders/SamorodLabDSD/lab34/lab34.h
+
+/Users/sveta/Documents/Freelance/LabsOrders/SamorodLabDSD/lab34/lab34.h
+stdio.h
+-
+malloc/malloc.h
+-
+string.h
+-
+iostream
+-
+

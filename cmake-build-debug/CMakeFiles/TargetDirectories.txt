@@ -1,0 +1,3 @@
+/Users/sveta/Documents/Freelance/LabsOrders/SamorodLabDSD/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/sveta/Documents/Freelance/LabsOrders/SamorodLabDSD/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/sveta/Documents/Freelance/LabsOrders/SamorodLabDSD/cmake-build-debug/CMakeFiles/SamorodLabDSD.dir
