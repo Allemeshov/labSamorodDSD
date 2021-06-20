@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
+#include <ctype.h>
+#include <vector>
 
 
 void lab33();
@@ -11,7 +13,7 @@ void lab33();
 
 struct Node {
 
-    int number; // данные
+    std::string number; // данные
     Node *next; // ссылка на следующий элемент
 };
 
@@ -24,13 +26,13 @@ void constr_list(List &l);
 
 bool chk_empty(List l);
 
-void add(List &l, int n);
+void add(List &l, std::string n);
 
 void remove_first(List &l);
 
 Node *find_by_index(List &l, int index);
 
-void add_by_index(List &l, int number, int index);
+void add_by_index(List &l, std::string number, int index);
 
 void remove_by_index(List &l, int index);
 

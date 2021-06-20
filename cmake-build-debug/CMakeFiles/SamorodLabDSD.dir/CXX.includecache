@@ -6,9 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/Users/sveta/Documents/Freelance/LabsOrders/SamorodLabDSD/lab34/lab34.cpp
-lab34.h
-/Users/sveta/Documents/Freelance/LabsOrders/SamorodLabDSD/lab34/lab34.h
+/Users/sveta/Documents/Freelance/LabsOrders/SamorodLabDSD/lab30/lab30.h
+iostream
+-
+
+/Users/sveta/Documents/Freelance/LabsOrders/SamorodLabDSD/lab32/lab32.h
+iostream
+-
+fstream
+-
+ctype.h
+-
+vector
+-
+
+/Users/sveta/Documents/Freelance/LabsOrders/SamorodLabDSD/lab33/lab33.h
+stdio.h
+-
+iostream
+-
+fstream
+-
+ctype.h
+-
+vector
+-
 
 /Users/sveta/Documents/Freelance/LabsOrders/SamorodLabDSD/lab34/lab34.h
 stdio.h
@@ -19,4 +41,16 @@ string.h
 -
 iostream
 -
+
+/Users/sveta/Documents/Freelance/LabsOrders/SamorodLabDSD/main.cpp
+iostream
+-
+lab30/lab30.h
+/Users/sveta/Documents/Freelance/LabsOrders/SamorodLabDSD/lab30/lab30.h
+lab32/lab32.h
+/Users/sveta/Documents/Freelance/LabsOrders/SamorodLabDSD/lab32/lab32.h
+lab33/lab33.h
+/Users/sveta/Documents/Freelance/LabsOrders/SamorodLabDSD/lab33/lab33.h
+lab34/lab34.h
+/Users/sveta/Documents/Freelance/LabsOrders/SamorodLabDSD/lab34/lab34.h
 

@@ -1,38 +1,50 @@
 #include "lab32.h"
 
 void lab32() {
-    int length;
-    std::cout << "Enter length: ";
-    std::cin >> length;
-
-    struct Queue *queue = createQueue(length);
-
-    int val;
-    for (int i = 0; i < length; ++i) {
-        std::cout << "Enter number[" << i << "]: ";
-        std::cin >> val;
-
-        enqueue(queue, val);
-    }
+    std::fstream file;
+    file.open("text32.txt", std::fstream::in);
+    std::string line;
+    std::vector<std::string> lines;
 
 
-    std::cout << "\nCurrent elements: ";
-    for (int i = 0; i < length; ++i) {
-        val = dequeue(queue);
+    if (file.is_open()) {
+        struct Queue *letters;
+        struct Queue *digits;
+        int length;
+        while (getline(file, line)) {
+            length = line.length();
+            letters = createQueue(length);
+            digits = createQueue(length);
 
-        std::cout << val << ' ';
+            for (int i = 0; i < length; ++i) {
+                if (isdigit(line[i]))
+                    enqueue(digits, line[i]);
+                else
+                    enqueue(letters, line[i]);
+            }
 
-        if (val % 2 == 0) {
-            val *= val;
+            for (int i = 0; i < length; ++i) {
+                if (!isEmpty(letters)) {
+                    line[i] = dequeue(letters);
+                } else {
+                    if (!isEmpty(digits))
+                        line[i] = dequeue(digits);
+                }
+            }
+
+            lines.emplace_back(line);
         }
+        file.close();
 
-        enqueue(queue, val);
+        file.open("text32.txt", std::fstream::out | std::fstream::trunc);
+        for (auto &curLine : lines)
+            file << curLine << '\n';
     }
-
-    std::cout << "\nNew elements: ";
-    for (int i = 0; i < length; ++i) {
-        std::cout << dequeue(queue) << ' ';
-    }
+    /*
+     * a1b2cc3
+     * asd2asd3asd
+     * 0s12dsd34d
+     * */
 }
 
 // function to create a queue
@@ -46,8 +58,8 @@ struct Queue *createQueue(unsigned capacity) {
 
     // This is important, see the enqueue
     queue->rear = capacity - 1;
-    queue->array = (int *) malloc(
-            queue->capacity * sizeof(int));
+    queue->array = (char *) malloc(
+            queue->capacity * sizeof(char));
     return queue;
 }
 
@@ -64,7 +76,7 @@ int isEmpty(struct Queue *queue) {
 
 // Function to add an item to the queue.
 // It changes rear and size
-void enqueue(struct Queue *queue, int item) {
+void enqueue(struct Queue *queue, char item) {
     if (isFull(queue))
         return;
     queue->rear = (queue->rear + 1)
@@ -75,7 +87,7 @@ void enqueue(struct Queue *queue, int item) {
 
 // Function to remove an item from queue.
 // It changes front and size
-int dequeue(struct Queue *queue) {
+char dequeue(struct Queue *queue) {
     if (isEmpty(queue))
         return INT_MIN;
     int item = queue->array[queue->front];
@@ -85,14 +97,14 @@ int dequeue(struct Queue *queue) {
 }
 
 // Function to get front of queue
-int front(struct Queue *queue) {
+char front(struct Queue *queue) {
     if (isEmpty(queue))
         return INT_MIN;
     return queue->array[queue->front];
 }
 
 // Function to get rear of queue
-int rear(struct Queue *queue) {
+char rear(struct Queue *queue) {
     if (isEmpty(queue))
         return INT_MIN;
     return queue->array[queue->rear];

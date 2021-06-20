@@ -2,6 +2,10 @@
 #define SAMORODLABDSD_LAB32_H
 
 #include <iostream>
+#include <fstream>
+#include <ctype.h>
+#include <vector>
+
 
 void lab32();
 
@@ -9,7 +13,7 @@ void lab32();
 struct Queue {
     int front, rear, size;
     unsigned capacity;
-    int *array;
+    char *array;
 };
 
 // function to create a queue
@@ -26,16 +30,16 @@ int isEmpty(struct Queue *queue);
 
 // Function to add an item to the queue.
 // It changes rear and size
-void enqueue(struct Queue *queue, int item);
+void enqueue(struct Queue *queue, char item);
 
 // Function to remove an item from queue.
 // It changes front and size
-int dequeue(struct Queue *queue);
+char dequeue(struct Queue *queue);
 
 // Function to get front of queue
-int front(struct Queue *queue);
+char front(struct Queue *queue);
 
 // Function to get rear of queue
-int rear(struct Queue *queue);
+char rear(struct Queue *queue);
 
 #endif //SAMORODLABDSD_LAB32_H
